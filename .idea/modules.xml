@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/backend.iml" filepath="$PROJECT_DIR$/.idea/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-docker-AWS/spring-boot-pp.iml" filepath="$PROJECT_DIR$/Spring-docker-AWS/spring-boot-pp.iml" />
     </modules>
   </component>
 </project>
