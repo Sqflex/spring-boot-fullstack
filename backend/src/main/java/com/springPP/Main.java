@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 import com.github.javafaker.Faker;
 
 import java.util.Random;
-import java.util.List;
 
 @SpringBootApplication
 public class Main {
