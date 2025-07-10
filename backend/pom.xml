@@ -31,6 +31,8 @@
 		<maven.compiler.source>24</maven.compiler.source>
 		<maven.compiler.target>24</maven.compiler.target>
 		<docker.username>sqflexx</docker.username>
+		<docker.image.name>spring-boot-pp</docker.image.name>
+		<docker.image.tag/>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -154,7 +156,7 @@
 						<image>eclipse-temurin:24</image>
 					</from>
 					<to>
-						<image>docker.io/${docker.username}/${project.artifactId}:${project.version}</image>
+						<image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
 						<tags>
 							<tag>latest</tag>
 						</tags>
