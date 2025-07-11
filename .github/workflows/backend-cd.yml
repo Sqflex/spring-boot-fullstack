@@ -52,5 +52,23 @@ jobs:
           sed -i -E 's_(sqflexx/spring-boot-pp:)([^"]*)_\1'${BUILD_NUMBER}'_' Dockerrun.aws.json
           echo "Dockerrun.aws.json after updating tag"
           cat Dockerrun.aws.json
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: ${{ secrets.EB_APP_NAME }}
+          environment_name: ${{ secrets.EB_ENV_NAME }}
+          version_label: ${{ steps.build-number.outputs.BUILD_NUMBER }}
+          version_description: ${{ github.SHA}}
+          region: ${{ secrets.EB_REGION}}
+          deployment_package: backend/Dockerrun.aws.json
+      - name: commit and push Dockerrun.aws.json
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Upd to Dockerrun.aws.json image with new tag ${{ steps.build-number }}"
+          git push
 
           
